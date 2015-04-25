@@ -10,7 +10,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
-        li: a(ui-sref='about'): i.fa.fa-home &nbsp; About Me
+        li: a(ui-sref='about'): i.fa.fa-question-circle &nbsp; About Me
         li: a(ui-sref='register'): i.fa.fa-user-plus &nbsp; Register
         li: a(ui-sref='login'): i.fa.fa-key &nbsp; Login
-        li: a(href='#', ng-click='logout()') {{user.displayName || user.email}}
+        li: a(href='#', ng-click='logout()'): i.fa.fa-sign-out Logout {{user.displayName || user.email}}

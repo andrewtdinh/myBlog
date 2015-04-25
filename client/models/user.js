@@ -5,6 +5,9 @@ angular.module('ptc')
   function register(user){
     return $rootScope.afAuth.$createUser(user);
   }
+  function login(user){
+    return $rootScope.afAuth.$authWithPassword(user);
+  }
 
-  return {register: register};
+  return {register: register, login: login};
 }]);

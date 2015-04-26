@@ -1,6 +1,9 @@
 .row
   .col-xs-4
     form
+      .form-group(ng-hide='name==="login"')
+        label(for='userName') Username
+        input#userName.form-control(type='text', name='userName', ng-model='user.userName')
       .form-group
         label(for='email') Email
         input#email.form-control(type='email', name='email', ng-model='user.email')

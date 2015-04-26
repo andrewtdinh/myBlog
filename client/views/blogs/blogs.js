@@ -4,14 +4,17 @@ angular.module('ptc')
 .controller('BlogsCtrl', ['Blog', '$window', '$scope', '$state', '$rootScope', 'User', function(Blog, $window, $scope, $state, $rootScope, User){
   $scope.name = $state.current.name;
   User.init();
+  $scope.afBlogs = Blog.init();
 
   console.info('$rootScope.activeUser: ', $rootScope.activeUser);
 
   $scope.addBlog = function(blog){
     if (!$scope.blog.title){
-      $scope.blog.title = $rootScope.getEmailHandle($state.current.name);
+      $scope.blog.title = $rootScope.getEmailHandle($rootScope.activeUser.password.email);
+      console.info($scope.blog.title);
     }
     var blurb = makeBlurb($scope.blog.body, 100);
+    debugger;
     var o = {
       author: $scope.blog.author,
       title: $scope.blog.title,

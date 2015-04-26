@@ -8,6 +8,9 @@ angular.module('ptc')
   function login(user){
     return $rootScope.afAuth.$authWithPassword(user);
   }
+  function logout(){
+    return $rootScope.afAuth.$unauth();
+  }
 
-  return {register: register, login: login};
+  return {register: register, login: login, logout: logout};
 }]);

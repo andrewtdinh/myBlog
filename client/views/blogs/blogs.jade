@@ -1,2 +1,42 @@
 h3(ng-show='name==="addBlog"') Add a new blog:
 h3(ng-hide='name==="addBlog"') Edit an existing blog:
+
+.row
+  .col-xs-4
+    form
+      .form-group
+        label(for='author') Author
+        input#author.form-control(type='text', name='author', ng-model='blog.author')
+  .col-xs-6
+    form  
+      .form-group
+        label(for='title') Blog Title
+        input#title.form-control(type='text', name='title', ng-model='blog.title')
+      .form-group
+        label(for='tags') Tag Terms (separated by commas)
+        input#tags.form-control(type='text', name='tags', ng-model='blog.tags')
+      .form-group
+        label(for='body') Speak Your Mind:
+        textarea#body(name='body', cols='100', rows='9') 
+      .form-group
+        button.btn.btn-info(ng-hide='blog.$id', ng-click='addBlog(blog)') Post Blog
+        //- button.btn.btn-danger(ng-show='task.$id', ng-click='updateTask(task)') Update
+//- table.table.table-striped
+//-   thead
+//-     tr
+//-       th Edit
+//-       th Delete
+//-       th(ng-click='sort("title")') Title
+//-       th(ng-click='sort("dueDate")') Due Date
+//-       th(ng-click='sort("priority")') Priority
+//-       th(ng-click='sort("isComplete")') Complete?
+//-       th(ng-click='sort("createdAt")') Created At 
+//-   tbody
+//-     tr(ng-repeat= 'task in afTasks | orderBy:taskOrder', ng-class='{completed:task.isComplete}')
+//-       td: button.btn.btn-info.btn-xs(ng-click='editTask(task)') Edit
+//-       td: button.btn.btn-danger.btn-xs(ng-click='deleteTask(task)') Delete
+//-       td {{task.title}}
+//-       td {{task.dueDate | date: 'yyyy-MM-dd'}}
+//-       td {{task.priority}}
+//-       td: input(type='checkbox', ng-model='task.isComplete', ng-click='toggleComplete(task)')
+//-       td {{task.createdAt | date:'yyyy-MM-dd'}}

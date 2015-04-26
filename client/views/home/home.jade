@@ -1,22 +1,13 @@
 h2 Welcome to Philoteccentric!! 
 h4 Here we discuss philosophy, technology, and a little of everything else.
 
-//- table.table.table-striped
-//-   thead
-//-     tr
-//-       th Edit
-//-       th Delete
-//-       th(ng-click='sort("title")') Title
-//-       th(ng-click='sort("dueDate")') Due Date
-//-       th(ng-click='sort("priority")') Priority
-//-       th(ng-click='sort("isComplete")') Complete?
-//-       th(ng-click='sort("createdAt")') Created At 
-//-   tbody
-//-     tr(ng-repeat= 'task in afTasks | orderBy:taskOrder', ng-class='{completed:task.isComplete}')
-//-       td: button.btn.btn-info.btn-xs(ng-click='editTask(task)') Edit
-//-       td: button.btn.btn-danger.btn-xs(ng-click='deleteTask(task)') Delete
-//-       td {{task.title}}
-//-       td {{task.dueDate | date: 'yyyy-MM-dd'}}
-//-       td {{task.priority}}
-//-       td: input(type='checkbox', ng-model='task.isComplete', ng-click='toggleComplete(task)')
-//-       td {{task.createdAt | date:'yyyy-MM-dd'}}
+table#blogList.table.table-striped(ng-repeat= 'blog in afBlogs | orderBy:blogOrder')
+  tbody
+    tr
+      td: button.btn.btn-info.btn-xs(ng-click='editBlog(blog)') Edit
+      td: button.btn.btn-danger.btn-xs(ng-click='deleteTask(blog)') Delete
+      //- td {{task.title}}
+      //- td {{task.dueDate | date: 'yyyy-MM-dd'}}
+      //- td {{task.priority}}
+      //- td: input(type='checkbox', ng-model='task.isComplete', ng-click='toggleComplete(task)')
+      //- td {{task.createdAt | date:'yyyy-MM-dd'}}

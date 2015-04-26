@@ -1,6 +1,18 @@
 'use strict';
 
 angular.module('ptc')
-.controller('NavCtrl', ['$scope', function($scope){
-  
+.controller('NavCtrl', ['$scope', 'User', '$rootScope', '$state', function($scope, User, $rootScope, $state){
+  $scope.afAuth.$onAuth(function(data) {
+    if (data) {
+      $rootScope.activeUser = data;
+    }else {
+      $rootScope.activeUser = null;
+    }
+
+    $state.go('home');
+  });
+
+  $scope.logout = function(){
+    User.logout();
+  };
 }]);

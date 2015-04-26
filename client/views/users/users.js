@@ -4,6 +4,7 @@ angular.module('ptc')
 .controller('UsersCtrl', ['$scope', '$rootScope', '$state', 'User', function($scope, $rootScope, $state, User){
   console.info('$state is:', $state.current.name);
   $scope.name = $state.current.name;
+  User.init();
 
   $scope.submit = function(user){
     if ($scope.name === 'register') {
@@ -29,4 +30,5 @@ angular.module('ptc')
       });
     }
   };
+
 }]);

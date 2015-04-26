@@ -17,4 +17,4 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         li: a(ui-sref='home'): i.fa.fa-home.fa-lg &nbsp; Home
         li: a(ui-sref='about'): i.fa.fa-question-circle.fa-lg &nbsp; About Me
         li: a#newBlog(ui-sref='addBlog'): i.fa.fa-pencil-square-o.fa-lg &nbsp; New Blog
-        li: a#logout.a-danger(href='#', ng-click='logout()'): i.fa.fa-sign-out.fa-lg Logout &nbsp;{{activeUser.password.email}}
+        li: a#logout.a-danger(href='#', ng-click='logout()'): i.fa.fa-sign-out.fa-lg Logout &nbsp;{{getEmailHandle(activeUser.password.email)}}

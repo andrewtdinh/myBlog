@@ -17,7 +17,7 @@ h3(ng-hide='name==="addBlog"') Edit an existing blog:
         input#tags.form-control(type='text', name='tags', ng-model='blog.tags')        
       .form-group
         label(for='body') Speak Your Mind:
-        textarea#body(name='body', cols='80%', rows='9') 
+        textarea#body(name='body', cols='80%', rows='9', ng-model='blog.body') 
       .form-group
         button.btn.btn-info(ng-hide='blog.$id', ng-click='addBlog(blog)') Post Blog
         //- button.btn.btn-danger(ng-show='task.$id', ng-click='updateTask(task)') Update

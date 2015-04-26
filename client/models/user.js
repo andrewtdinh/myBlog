@@ -1,7 +1,13 @@
 'use strict';
 
 angular.module('ptc')
-.factory('User', ['$rootScope', '$state', function($rootScope, $state){
+.factory('User', ['$rootScope', function($rootScope){
+  function init(){
+    $rootScope.getEmailHandle = function(email) {
+      return email ? email.slice(0, email.indexOf('@')) : '';
+    };
+  }
+
   function register(user){
     return $rootScope.afAuth.$createUser(user);
   }
@@ -12,5 +18,5 @@ angular.module('ptc')
     return $rootScope.afAuth.$unauth();
   }
 
-  return {register: register, login: login, logout: logout};
+  return {init: init, register: register, login: login, logout: logout};
 }]);

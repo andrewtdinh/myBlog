@@ -16,4 +16,4 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
       ul.nav.navbar-nav.navbar-right(ng-show='activeUser')
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
         li: a(ui-sref='about'): i.fa.fa-question-circle &nbsp; About Me
-        li: a(href='#', ng-click='logout()'): i.fa.fa-sign-out Logout {{user.displayName || user.email}}
+        li: a#logout.a-danger(href='#', ng-click='logout()'): i.fa.fa-sign-out Logout &nbsp;{{activeUser.password.email}}

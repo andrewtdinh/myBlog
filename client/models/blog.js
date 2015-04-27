@@ -5,6 +5,7 @@ angular.module('ptc')
   var fbBlogs;
   var afBlogs;
 
+
   console.log('I am inside Blog factory');
   function init(){
     fbBlogs = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs');
@@ -12,9 +13,15 @@ angular.module('ptc')
     return afBlogs;
   }
 
+  function initUsers(){
+    var fbUsers = $rootScope.fbRoot.child('users');
+    var afUsers = $firebaseArray(fbUsers);
+    return afUsers;
+  }
+
   function add(blog){
     return afBlogs.$add(blog);
   }
 
-  return {add: add, init: init};
+  return {add: add, init: init, initUsers: initUsers};
 }]);

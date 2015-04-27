@@ -20,10 +20,14 @@ angular.module('ptc')
         return tag.trim();
       });
     }
+    var title = '';
+    if ($scope.blog.title){
+      title = $scope.blog.title;
+    }
     var blurb = makeBlurb($scope.blog.body, 100);
     var o = {
       author: $scope.blog.author,
-      title: $scope.blog.title,
+      title: title,
       tags: tags,
       body: $scope.blog.body,
       email: $rootScope.activeUser.password.email,
@@ -31,7 +35,6 @@ angular.module('ptc')
       postDate: $window.Firebase.ServerValue.TIMESTAMP
     };
 
-    debugger;
     Blog.add(o)
     .then(function(data){
       console.info('data', data);

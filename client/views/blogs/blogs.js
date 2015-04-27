@@ -38,12 +38,12 @@ angular.module('ptc')
     Blog.add(o)
     .then(function(data){
       console.info('data', data); //I think we can directly go to the post after the post
-      $scope.blog = {};
+      $state.go('home')
     });
   };
 
   function makeBlurb(post, strLength){
-    return post ? post.slice(0, strLength) : '';
+    return post ? post.slice(0, strLength) + '...' : '';
   }
 
 

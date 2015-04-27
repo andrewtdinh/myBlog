@@ -37,7 +37,7 @@ angular.module('ptc')
 
     Blog.add(o)
     .then(function(data){
-      console.info('data', data);
+      console.info('data', data); //I think we can directly go to the post after the post
       $scope.blog = {};
     });
   };

@@ -9,22 +9,29 @@ angular.module('ptc')
   console.info('$rootScope.activeUser: ', $rootScope.activeUser);
 
   $scope.addBlog = function(blog){
-    if (!$scope.blog.title){
-      $scope.blog.title = $rootScope.getEmailHandle($rootScope.activeUser.password.email);
-      console.info($scope.blog.title);
+    if (!$scope.blog.author){
+      $scope.blog.author = $rootScope.getEmailHandle($rootScope.activeUser.password.email);
+      console.log('In the if block inside addBlog');
+    }
+    var tags = '';
+    if ($scope.blog.tags) {
+      tags = $scope.blog.tags;
+      tags = tags.split(',').map(function(tag){
+        return tag.trim();
+      });
     }
     var blurb = makeBlurb($scope.blog.body, 100);
-    debugger;
     var o = {
       author: $scope.blog.author,
       title: $scope.blog.title,
-      tags: $scope.blog.tags,
+      tags: tags,
       body: $scope.blog.body,
-      email: $rootScope.activeUser,
+      email: $rootScope.activeUser.password.email,
       blurb: blurb,
       postDate: $window.Firebase.ServerValue.TIMESTAMP
     };
 
+    debugger;
     Blog.add(o)
     .then(function(data){
       console.info('data', data);

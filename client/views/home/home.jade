@@ -1,9 +1,11 @@
 h2 Welcome to Philoteccentric!! 
 h3 Here we discuss philosophy, technology, and a little of everything else.
 
-table#blogList.table.table-striped(ng-repeat='user in afUsers')
+table.blogList.table.table-striped(ng-repeat='user in afUsers')
   tbody(ng-repeat='blog in user.blogs')
     tr.success
-      td.header {{blog.postDate | date:'dd-MMM-yyyy'}}:&nbsp;&nbsp;{{blog.title}} &nbsp; (by &nbsp;{{blog.author}})
+      td.header {{blog.postDate | date:'yyyy-MMM-dd HH:mm.ss'}}:&nbsp;&nbsp;{{blog.title}} &nbsp; (by &nbsp;{{blog.author}})
     tr.warning
-      td.blurb {{blog.blurb}}
+      td.blurb(ng-click='displayFullBlog(user, blog)') {{blog.blurb}}
+      //- td.blurb(ng-show='display', ng-click='toggleDisplay()') {{blog.blurb}}
+      //- td.blogbody(ng-show='!display', ng-click='toggleDisplay()') {{blog.body}}

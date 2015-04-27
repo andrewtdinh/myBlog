@@ -1,13 +1,13 @@
 h2 Welcome to Philoteccentric!! 
 h4 Here we discuss philosophy, technology, and a little of everything else.
 
-table#blogList.table.table-striped(ng-repeat= 'blog in afBlogs | orderBy:blogOrder')
+table#blogList.table.table-striped(ng-repeat='blog in afBlogs')
   tbody
     tr
-      td {{blog.createdAt | date:'dd-MMM-yyyy'}}
+      td#blogDate {{blog.postDate | date:'dd-MMM-yyyy'}}
       td {{blog.author}}
       td {{blog.title}}
     tr 
-      td {{blog.body}}
+      td(colspan='3') {{blog.body}}
       //- td: button.btn.btn-info.btn-xs(ng-click='editBlog(blog)') Edit
       //- td: button.btn.btn-danger.btn-xs(ng-click='deleteBlog(blog)') Delete

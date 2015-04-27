@@ -5,9 +5,8 @@ table#blogList.table.table-striped(ng-repeat='blog in afBlogs')
   tbody
     tr
       td#blogDate {{blog.postDate | date:'dd-MMM-yyyy'}}
-      td {{blog.author}}
-      td {{blog.title}}
+      td {{blog.title}} &nbsp; By: &nbsp;{{blog.author}}
     tr 
-      td(colspan='3') {{blog.body}}
+      td(colspan='2') {{blog.blurb}}
       //- td: button.btn.btn-info.btn-xs(ng-click='editBlog(blog)') Edit
       //- td: button.btn.btn-danger.btn-xs(ng-click='deleteBlog(blog)') Delete

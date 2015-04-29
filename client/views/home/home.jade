@@ -7,5 +7,3 @@ table.blogList.table.table-striped(ng-repeat='user in afUsers')
       td.header {{blog.postDate | date:'yyyy-MMM-dd HH:mm.ss'}}:&nbsp;&nbsp;{{blog.title}} &nbsp; (by &nbsp;{{blog.author}})
     tr.warning
       td.blurb(ng-click='displayFullBlog(user, blog)') {{blog.blurb}}
-      //- td.blurb(ng-show='display', ng-click='toggleDisplay()') {{blog.blurb}}
-      //- td.blogbody(ng-show='!display', ng-click='toggleDisplay()') {{blog.body}}

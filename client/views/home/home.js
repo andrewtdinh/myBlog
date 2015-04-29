@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('ptc')
-.controller('HomeCtrl', ['$state', '$scope', 'User', 'Blog', function($state, $scope, User, Blog){
+.controller('HomeCtrl', ['$rootScope', '$scope', 'User', 'Blog', function($rootScope, $scope, User, Blog){
   User.init();
-  $scope.afBlogs = Blog.init();
-  $scope.afUsers = Blog.initUsers();
-  // $scope.display = true;
-  console.info('Inside the HomeCtrl');
+  $rootScope.afBlogs = Blog.init();
+  $rootScope.afUsers = Blog.initUsers();
+
   $scope.displayFullBlog = function(user, blog){
     // var userUid = user.$id;
     // var blogKey = user.

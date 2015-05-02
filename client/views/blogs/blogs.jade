@@ -1,13 +1,12 @@
-h3(ng-show='name==="addBlog"') Add a new blog:
-h3(ng-hide='name==="addBlog"') Edit an existing blog:
 
 .row
-  .col-xs-4
+  .col-xs-3.col-xs-offset-4
+    h3(ng-show='name==="addBlog"') Add a new blog:
+    h3(ng-hide='name==="addBlog"') Edit an existing blog:
     form
       .form-group
         label(for='author') Author
         input#author.form-control(type='text', name='author', ng-model='blog.author')
-  .col-xs-6
     form  
       .form-group
         label(for='title') Blog Title

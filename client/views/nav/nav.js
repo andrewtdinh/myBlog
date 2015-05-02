@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ptc')
-.controller('NavCtrl', ['$scope', 'User', '$rootScope', '$state', function($scope, User, $rootScope, $state){
+.controller('NavCtrl', ['$firebaseObject', '$scope', 'User', '$rootScope', '$state', function($firebaseObject, $scope, User, $rootScope, $state){
   User.init();
   $scope.afAuth.$onAuth(function(data){
     if(data){

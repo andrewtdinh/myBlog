@@ -5,6 +5,9 @@ html(lang='en', ng-app='ptc')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title Philoteccentric
+    
+    script(src='/vendor/platorm/platform.js')
+  	link(rel='import', href='vendor/markdown-editor/markdown-editor.html')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/sandstone/bootstrap.min.css')
     link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
@@ -18,8 +21,6 @@ html(lang='en', ng-app='ptc')
             img(src='/assets/ptc.png')
           div(ui-view) 
           
-
-
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
     script(src='/vendor/lodash/lodash.min.js')

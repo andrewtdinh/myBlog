@@ -9,8 +9,6 @@ angular.module('ptc')
   $scope.displayFullBlog = function(user, blog, index){
     var userUid = user.$id;
     var blogKey = $rootScope.afBlogs.$keyAt(index);
-    // var blogKey = user.
-    // $scope.display = !$scope.display;
     $state.go('fullBlog', {uid: userUid, blogKey: blogKey});
     console.info('user: ', user, 'blog: ', $rootScope.afBlogs.$keyAt(index), 'afBlogs: ', Object.keys($rootScope.afBlogs));
   };

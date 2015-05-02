@@ -1,15 +1,13 @@
 'use strict';
 
 angular.module('ptc')
-.factory('Blog', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
-  var fbBlogs;
-  var afBlogs;
+.factory('Blog', ['$firebaseObject', 'User', '$rootScope', '$firebaseArray', function($firebaseObject, User, $rootScope, $firebaseArray){
+  User.init();
+  $rootScope.afBlogs = init();
 
-
-  console.log('I am inside Blog factory');
   function init(){
-    fbBlogs = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs');
-    afBlogs = $firebaseArray(fbBlogs);
+    var fbBlogs = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs');
+    var afBlogs = $firebaseArray(fbBlogs);
     return afBlogs;
   }
 
@@ -20,8 +18,15 @@ angular.module('ptc')
   }
 
   function add(blog){
-    return afBlogs.$add(blog);
+    return $rootScope.afBlogs.$add(blog);
   }
 
-  return {add: add, init: init, initUsers: initUsers};
+  function getBlog(blogKey){
+    var fbBlog = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs/' + blogKey);
+    var afBlog = $firebaseObject(fbBlog);
+    console.log('afBlog inside getBlog: ', afBlog);
+    return afBlog;
+  }
+
+  return {add: add, init: init, initUsers: initUsers, getBlog: getBlog};
 }]);

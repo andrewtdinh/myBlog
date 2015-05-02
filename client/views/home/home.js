@@ -1,16 +1,17 @@
 'use strict';
 
 angular.module('ptc')
-.controller('HomeCtrl', ['$rootScope', '$scope', 'User', 'Blog', function($rootScope, $scope, User, Blog){
+.controller('HomeCtrl', ['$state', '$rootScope', '$scope', 'User', 'Blog', function($state, $rootScope, $scope, User, Blog){
   User.init();
   $rootScope.afBlogs = Blog.init();
   $rootScope.afUsers = Blog.initUsers();
 
-  $scope.displayFullBlog = function(user, blog){
-    // var userUid = user.$id;
+  $scope.displayFullBlog = function(user, blog, index){
+    var userUid = user.$id;
+    var blogKey = $rootScope.afBlogs.$keyAt(index);
     // var blogKey = user.
     // $scope.display = !$scope.display;
-    // $state.go('fullBlog', {uid:,blogKey:,blogIndex: };
-    console.info('user: ', user, 'blog: ', blog);
+    $state.go('fullBlog', {uid: userUid, blogKey: blogKey});
+    console.info('user: ', user, 'blog: ', $rootScope.afBlogs.$keyAt(index), 'afBlogs: ', Object.keys($rootScope.afBlogs));
   };
 }]);

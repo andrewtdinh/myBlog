@@ -1,1 +1,1 @@
-## Implementing a todo app using Angular-Firebase
+## Implementing my own blog using Angular and Firebase.

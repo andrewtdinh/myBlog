@@ -6,14 +6,13 @@ angular.module('ptc')
   $rootScope.afBlogs = init();
 
   function init(){
-    var fbBlogs = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs');
+    var fbBlogs = $rootScope.fbRoot.child('users');
     var afBlogs = $firebaseArray(fbBlogs);
     return afBlogs;
   }
 
   function initUsers(){
-    var fbUsers = $rootScope.fbRoot.child('users');
-    var afUsers = $firebaseArray(fbUsers);
+
     return afUsers;
   }
 

@@ -4,6 +4,7 @@ angular.module('ptc')
 .controller('HomeCtrl', ['$state', '$rootScope', '$scope', 'User', 'Blog', function($state, $rootScope, $scope, User, Blog){
   User.init();
   $rootScope.afBlogs = Blog.init();
+  $scope.blogs = $rootScope.afBlogs;
 
   $scope.displayFullBlog = function(blog, index){
     if($rootScope.activeUser){

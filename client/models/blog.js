@@ -6,14 +6,9 @@ angular.module('ptc')
   $rootScope.afBlogs = init();
 
   function init(){
-    var fbBlogs = $rootScope.fbRoot.child('users');
+    var fbBlogs = $rootScope.fbRoot.child('blogs');
     var afBlogs = $firebaseArray(fbBlogs);
     return afBlogs;
-  }
-
-  function initUsers(){
-
-    return afUsers;
   }
 
   function add(blog){
@@ -21,11 +16,11 @@ angular.module('ptc')
   }
 
   function getBlog(blogKey){
-    var fbBlog = $rootScope.fbRoot.child('users/' +$rootScope.activeUser.uid+ '/blogs/' + blogKey);
+    var fbBlog = $rootScope.fbRoot.child('/blogs/' + blogKey);
     var afBlog = $firebaseObject(fbBlog);
     console.log('afBlog inside getBlog: ', afBlog);
     return afBlog;
   }
 
-  return {add: add, init: init, initUsers: initUsers, getBlog: getBlog};
+  return {add: add, init: init, getBlog: getBlog};
 }]);

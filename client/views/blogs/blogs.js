@@ -11,7 +11,6 @@ angular.module('ptc')
   $scope.addBlog = function(blog){
     if (!$scope.blog.author){
       $scope.blog.author = $rootScope.getEmailHandle($rootScope.activeUser.password.email);
-      console.log('In the if block inside addBlog');
     }
     var tags = '';
     if ($scope.blog.tags) {
@@ -32,9 +31,11 @@ angular.module('ptc')
       body: $scope.blog.body,
       email: $rootScope.activeUser.password.email,
       blurb: blurb,
-      postDate: $window.Firebase.ServerValue.TIMESTAMP
+      postDate: $window.Firebase.ServerValue.TIMESTAMP,
+      userUid: $rootScope.activeUser.uid
     };
 
+    console.info('$rootScope.activeUser.uid: ', o.userUid);
     Blog.add(o)
     .then(function(data){
       console.info('data', data); //I think we can directly go to the post after the post

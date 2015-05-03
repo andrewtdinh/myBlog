@@ -1,20 +1,15 @@
 'use strict';
 
 angular.module('ptc')
-.controller('NavCtrl', ['$firebaseObject', '$scope', 'User', '$rootScope', '$state', function($firebaseObject, $scope, User, $rootScope, $state){
-  User.init();
+.controller('NavCtrl', ['$scope', 'User', '$rootScope', '$state', function($scope, User, $rootScope, $state){
+  User.init();  //so that we can get the email handle
   $scope.afAuth.$onAuth(function(data){
     if(data){
       $rootScope.activeUser = data;
       $rootScope.displayName = getDisplayName(data);
-      $rootScope.fbUser = $rootScope.fbRoot.child('users/' + data.uid);
-      $rootScope.afUser = $firebaseObject($rootScope.fbUser);
-      console.info('data: ', data);
     }else{
       $rootScope.activeUser = null;
       $rootScope.displayName = null;
-      $rootScope.fbUser = null;
-      $rootScope.afUser = null;
     }
     $state.go('home');
   });

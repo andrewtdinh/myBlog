@@ -11,6 +11,10 @@
     "jquery": "~2.1.3",
     "bootstrap": "~3.3.4",
     "angular-ui-router": "~0.2.13",
-    "markdown-editor": "~0.1.1"
+    "angular-markdown-text": "~0.0.2",
+    "angular-sanitize": "~1.4.1"
+  },
+  "resolutions": {
+    "angular": "1.4.1"
   }
 }

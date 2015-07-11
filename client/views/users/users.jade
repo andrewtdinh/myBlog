@@ -1,5 +1,8 @@
+h4 
+  | (You can login using the email address 'hr@hr.com' and password 'testAddBlog' to play around.)
+
 .row
-  .col-xs-2
+  .col-md-4
     form
       .form-group
         label(for='email') Email
@@ -9,6 +12,5 @@
         input#password.form-control(type='password', name='password', ng-model='user.password')
       .form-group
         button.btn.btn-success(type='submit', ng-click='submit(user)', ng-show='name==="login"') Login
-      
-
-  .col-xs-8
+  .col-md-8
+  

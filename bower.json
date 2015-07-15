@@ -12,9 +12,11 @@
     "bootstrap": "~3.3.4",
     "angular-ui-router": "~0.2.13",
     "angular-markdown-text": "~0.0.2",
-    "angular-sanitize": "~1.4.1"
+    "angular-sanitize": "~1.4.1",
+    "showdown": "~1.2.0"
   },
   "resolutions": {
-    "angular": "~1.4.1"
+    "angular": "1.4.3",
+    "showdown": "~0.3.1"
   }
 }

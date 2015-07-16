@@ -22,8 +22,5 @@
         //- button.btn.btn-danger(ng-show='task.$id', ng-click='updateTask(task)') Update
   .col-md-5
     //- markdown#preview(markdown-model='blog.body')
-    btf-markdown#preview
-      | ## Dependencies
-      | * [angular.js](https://angularjs.org/) _~1.2.26_
-      | * [angular-sanitize](https://docs.angularjs.org/api/ngSanitize/service/$sanitize) _~1.2.26_ (optional)
-      | * [showdown]
+    marked#preview
+      {{$scope.blog.body}}

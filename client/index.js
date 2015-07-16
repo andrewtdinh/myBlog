@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ptc', ['firebase', 'ui.router'])
+angular.module('ptc', ['firebase', 'ui.router', 'hc.marked'])
 .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider

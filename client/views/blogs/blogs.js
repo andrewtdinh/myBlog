@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ptc')
-.controller('BlogsCtrl', ['marked', 'Blog', '$window', '$scope', '$state', '$rootScope', 'User', function(marked, Blog, $window, $scope, $state, $rootScope, User){
+.controller('BlogsCtrl', ['Blog', '$window', '$scope', '$state', '$rootScope', 'User', function(Blog, $window, $scope, $state, $rootScope, User){
   $scope.name = $state.current.name;
   User.init();
   $scope.afBlogs = Blog.init();

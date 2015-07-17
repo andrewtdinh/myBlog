@@ -22,5 +22,4 @@
         //- button.btn.btn-danger(ng-show='task.$id', ng-click='updateTask(task)') Update
   .col-md-5
     //- markdown#preview(markdown-model='blog.body')
-    marked#preview
-      {{'$scope.blog.body'}}
+    md#preview(ng-model='blog.body')

@@ -6,4 +6,9 @@
           th.header {{blog.postDate | date:'yyyy-MMM-dd HH:mm.ss'}}:&nbsp;&nbsp;{{blog.title}} &nbsp; (by &nbsp;{{blog.author}})
       tbody
         tr
-          td.blurb {{blog.body}}
+          td
+            //- marked.blurb 
+              |# header
+              | + item 1
+              | + item 2
+            marked.blurb '{{blog.body}}'

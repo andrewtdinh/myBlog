@@ -3,7 +3,7 @@ h2 Welcome to Philoteccentric!!
 h4 
   | Here we discuss philosophy, technology, and a little of everything else.  Click on the blurb of interest to see the full blog.
   | You can only add new blogs once you are logged-in.  Contact me if you want a certain blog deleted.
-table.blogList.table.table-striped
+table.blogList.table.table-striped.table-hover
   tbody(ng-repeat='blog in blogs')
     tr
       td.header {{blog.postDate | date:'yyyy-MMM-dd HH:mm.ss'}}:&nbsp;&nbsp;{{blog.title}} &nbsp; (by &nbsp;{{blog.author}})
